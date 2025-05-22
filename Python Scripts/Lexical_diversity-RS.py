@@ -31,7 +31,7 @@ with open(path, "r", encoding="utf-8") as file:
     print(f"Lexical Diversity Score: {LexicalDiversity(text)}")
 
 
-text1 = """Hello hello hello hello. 
+test1 = """Hello hello hello hello. 
 I greet you, and you greet me back. 
 The repetition of the word 'hello' fills the air. 
 It is said so often that it loses its meaning. 
@@ -40,7 +40,7 @@ Or does it gain significance in its continuous usage?
 Hello, hello, hello, I say again, wondering if you hear it the same way each time.
 """
 
-text2 = """
+test2 = """
 The cat sat on the mat, watching the world quietly. 
 It sat there for a long time, looking outside the window, its paws tucked under its body. 
 The mat seemed soft and comfortable, a perfect resting place for the cat. 
@@ -49,7 +49,7 @@ Despite the constant noise of the house, the cat remained calm, its eyes half-cl
 The world around it seemed distant, and the cat was lost in the quiet.
 """
 
-text3 = """
+test3 = """
 Birds fly across the sky, their wings cutting through the air with ease. 
 Fish swim in the clear blue waters, gliding smoothly beneath the surface. 
 Dogs bark joyfully as they run in fields, chasing after sticks and balls. 
@@ -59,14 +59,14 @@ Together, they create a vibrant, living tapestry of life, with each creature con
 """
 
 
-text4 = """
+test4 = """
 My name is Ryan. 
 My name is Ryan. 
 My name is Ryan. 
 My name is Ryan. 
 """
 
-text5 = """
+test5 = """
 Ryan is my name. 
 My name's Ryan. 
 My name is Ryan.
@@ -74,8 +74,8 @@ Ryan's my name.
 """
 
 
-print(LexicalDiversity(text1))
-print(LexicalDiversity(text2)) 
-print(LexicalDiversity(text3))
-print(LexicalDiversity(text4))
-print(LexicalDiversity(text5))
+print(LexicalDiversity(test1))
+print(LexicalDiversity(test2)) 
+print(LexicalDiversity(test3))
+print(LexicalDiversity(test4))
+print(LexicalDiversity(test5))
