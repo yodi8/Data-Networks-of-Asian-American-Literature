@@ -9,7 +9,11 @@ import string
 nlp = spacy.load('en_core_web_sm')
 
 def LexicalDiversity(text):
-
+  """
+  Calculates the Lexical Diversity of a text. This is calculated by dividing the number of unique lemmatized words (minus stop words) with
+  the total number of words in a text.
+  """
+  
   cleaned_text = text.strip().replace('\n', "").replace('\r', "")
 
   doc = nlp(cleaned_text)
