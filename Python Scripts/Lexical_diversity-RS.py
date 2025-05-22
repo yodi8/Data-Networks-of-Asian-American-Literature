@@ -26,6 +26,11 @@ def LexicalDiversity(text):
 if __name__ == '__main__':
     pass
 
+with open(path, "r", encoding="utf-8") as file:
+    text = file.read()
+    print(f"Lexical Diversity Score: {LexicalDiversity(text)}")
+
+
 text1 = """Hello hello hello hello. 
 I greet you, and you greet me back. 
 The repetition of the word 'hello' fills the air. 
