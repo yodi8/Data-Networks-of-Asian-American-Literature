@@ -13,20 +13,26 @@ def LexicalDiversity(text):
   Calculates the Lexical Diversity of a text. This is calculated by dividing the number of unique lemmatized words (minus stop words) with
   the total number of words in a text.
   """
-  
+
+  #removes leading and trailing white spaces, removes \n and \r throughout the whole text
   cleaned_text = text.strip().replace('\n', "").replace('\r', "")
 
+  #puts the cleaned text through the NLP pipeline, specified above the function
   doc = nlp(cleaned_text)
 
+  #calculates total length of the text
   totlength = len(cleaned_text.split())
 
+  #lemmatizes the text, removes punctuation and stop words, and calculates the number of unique lemmatized words in the text
   lemmas = [token.lemma_.lower() for token in doc]
   lemmas1 = [lemma for lemma in lemmas if lemma not in string.punctuation and lemma not in nlp.Defaults.stop_words]
   lexdiv = len(set(lemmas1))
 
+  #function returns 0 if text is empty
   if totlength == 0:
     return 0
 
+  #calculates and returns lexical diversity score (density of new/unique words)
   return lexdiv/(totlength)
 
 if __name__ == '__main__':
