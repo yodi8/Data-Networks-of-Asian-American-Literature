@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import re
 
-file_name = "1.txt"
-path = "Short Stories As Text"
+file_name = "Li-TheReasonWhy-2020.txt"
+path = "Short Stories As Text\\" + file_name
 
 def remove_all_symbols(text):
     return re.sub(r'[^A-Za-z\s]', '', text)
@@ -25,10 +25,24 @@ def average_word_length(text):
     
     return average
 
+def words_per_sentece(text):
+    count_words_per_sentence = []
+    text = text.split(".")
+    print(text[1])
+    for sentence in text:
+        number_of_words = len(sentence.split())
+        count_words_per_sentence.append(number_of_words)
+    
+    print(count_words_per_sentence[1])
+
+    result = sum(count_words_per_sentence)/len(count_words_per_sentence)
+    return result
 
 
-with open(file_name, "r", encoding="utf-8") as file:
+
+with open(path, "r", encoding="utf-8") as file:
     text = file.read()
     print(f"Word Count: {count_words(text)}")
     print(f"Average word length: {average_word_length(text)}")
+    print(f"Words Per Sentence: {words_per_sentece(text)}")
 

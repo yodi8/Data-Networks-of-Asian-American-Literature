@@ -2,8 +2,6 @@
 # coding: utf-8
 
 # In[ ]:
-
-
 import string
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -11,18 +9,19 @@ from collections import Counter
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords') 
-
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 file = input('Please input the name of the text file: ')
 try:
-    with open(file, 'r') as f:
+    with open(file, 'r', encoding='utf-8') as f:
         text = f.read() 
 except Exception as e:
     print(e)
     print(f'File {file} not found.')
     file = input('Please try again with the full absolute path: ')
     try:
-        with open(file, 'r') as f:
+        with open(file, 'r', encoding='utf-8') as f:
             text = f.read()
     except Exception as e:
         print(e)
