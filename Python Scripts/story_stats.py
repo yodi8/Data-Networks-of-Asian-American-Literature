@@ -30,12 +30,12 @@ def average_word_length(text):
 def words_per_sentece(text):
     count_words_per_sentence = []
     text = text.split(".")
-    print(text[1])
+    #print(text[1])
     for sentence in text:
         number_of_words = len(sentence.split())
         count_words_per_sentence.append(number_of_words)
     
-    print(count_words_per_sentence[1])
+    #print(count_words_per_sentence[1])
 
     result = sum(count_words_per_sentence)/len(count_words_per_sentence)
     return result
