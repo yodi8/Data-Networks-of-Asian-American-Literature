@@ -9,13 +9,15 @@ import string
 nlp = spacy.load('en_core_web_sm')
 
 def LexicalDiversity(text):
-  doc = nlp(text)
 
-  totlength = len(text.split())
+  cleaned_text = text.strip().replace('\n', "").replace('\r', "")
+
+  doc = nlp(cleaned_text)
+
+  totlength = len(cleaned_text.split())
 
   lemmas = [token.lemma_.lower() for token in doc]
   lemmas1 = [lemma for lemma in lemmas if lemma not in string.punctuation and lemma not in nlp.Defaults.stop_words]
-
   lexdiv = len(set(lemmas1))
 
   if totlength == 0:
