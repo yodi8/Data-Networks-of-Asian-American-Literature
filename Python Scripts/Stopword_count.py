@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[2]:
 
 
 import string
@@ -11,23 +11,17 @@ from collections import Counter
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords') 
+import os
 
+file = input('Please input the full absolute path of the text file: ')
 
-file = input('Please input the name of the text file: ')
-try:
-    with open(file, 'r') as f:
-        text = f.read() 
-except Exception as e:
-    print(e)
-    print(f'File {file} not found.')
-    file = input('Please try again with the full absolute path: ')
-    try:
-        with open(file, 'r') as f:
-            text = f.read()
-    except Exception as e:
-        print(e)
-        print('The program exits.')
-        exit()
+if not os.path.isfile(file):
+    print("File does not exist. Please check your path.")
+    exit()
+
+with open(file, 'r', encoding='utf-8') as f:
+    text = f.read()
+
 
 words = word_tokenize(text)
 words = [word.lower() for word in words if word.isalpha()]
@@ -41,6 +35,7 @@ for word, count in stopwords.most_common():
     print(f'{word}: {count}')
 print(f'Stopwords count: {stopword_count}')
 print(f'Percentage of stopwords: {round(stopword_count / len(words) * 100, 2)}%')
+
 
 
 # In[ ]:
