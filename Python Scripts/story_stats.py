@@ -27,7 +27,7 @@ def average_word_length(text):
     
     return average
 
-def words_per_sentece(text):
+def words_per_sentence(text):
     count_words_per_sentence = []
     text = text.split(".")
     #print(text[1])
@@ -60,6 +60,6 @@ with open(path, "r", encoding="utf-8") as file:
     text = file.read()
     print(f"Word Count: {count_words(text)}")
     print(f"Average word length: {average_word_length(text)}")
-    print(f"Words Per Sentence: {words_per_sentece(text)}")
+    print(f"Words Per Sentence: {words_per_sentence(text)}")
     print(f"Flesch Reading Score: {flesch_reading_ease(text)}")
 
