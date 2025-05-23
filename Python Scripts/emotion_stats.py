@@ -56,7 +56,6 @@ def emotion_stats(text):
     # 4. Within-emotion proportions
     if emo_count:
         positive_ratio = positive_count / emo_count
-        negative_ratio = negative_count / emo_count
     else:
         positive_ratio = negative_ratio = 0
 
@@ -67,7 +66,6 @@ def emotion_stats(text):
         'positive_count' : positive_count,
         'negative_count' : negative_count,
         'positive_ratio' : positive_ratio,
-        'negative_ratio' : negative_ratio
     }
 
 
